@@ -26,7 +26,7 @@ Ext.define('Ext.ux.Deferred', {
          */
         when: function () {
             var deferred = Ext.create('Ext.ux.Deferred'),
-                promises = arguments,
+                promises = Array.isArray(arguments[0]) ? arguments[0] : arguments,
                 promisesLen = promises.length,
                 rejectedCounter = 0,
                 resolved = {},
